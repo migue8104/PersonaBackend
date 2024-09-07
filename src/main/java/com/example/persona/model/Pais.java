@@ -2,14 +2,17 @@ package com.example.persona.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "Pais")
 
+public class Pais implements Serializable {
 
-public class Pais {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
+    @Column(name = "nombre")
     private String nombre;
 
     public Pais(String nombre) {
@@ -17,11 +20,15 @@ public class Pais {
         this.nombre = nombre;
     }
 
-    public int getId() {
+    public Pais() {
+
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
