@@ -6,23 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@SpringBootApplication(scanBasePackages = "com.example.persona.personabackend")
-
+@SpringBootApplication
 public class PersonaBackendApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(PersonaBackendApplication.class, args);
     }
 
-    @Bean
-    WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("*")
-                        .allowedHeaders("*");
-            }
-        };
-    }
 
 }

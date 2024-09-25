@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -23,6 +24,17 @@ public class EstadoService implements EstadoRepository{
     @Override
     public void flush() {
 
+    }
+
+    public List<Estado> findAllByCountry(Long id){
+        List<Estado> estadosRespuesta = new ArrayList<>();
+        List<Estado> estados = estadoRepository.findAll();
+        for (int i = 0; i < estados.size(); i++) {
+            if(estados.get(i).getPais().getId() == id){
+                estadosRespuesta.add(estados.get(i));
+            }
+        }
+        return estadosRespuesta;
     }
 
     @Override

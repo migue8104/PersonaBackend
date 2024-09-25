@@ -3,21 +3,85 @@ package com.example.persona.service;
 import com.example.persona.model.Pais;
 import com.example.persona.repository.PaisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
+
 @Service
-public class PaisService implements PaisRepository {
+public class PaisService implements PaisRepository{
 
     @Autowired
     private PaisRepository paisRepository;
+
+
+    @Override
+    public <S extends Pais> S save(S entity) {
+        return null;
+    }
+
+    @Override
+    public <S extends Pais> List<S> saveAll(Iterable<S> entities) {
+        return List.of();
+    }
+
+    @Override
+    public Optional<Pais> findById(Long aLong) {
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean existsById(Long aLong) {
+        return false;
+    }
+
+    public List<Pais> findAll() {
+        return paisRepository.findAll();
+    }
+
+    @Override
+    public List<Pais> findAllById(Iterable<Long> longs) {
+        return List.of();
+    }
+
+    @Override
+    public long count() {
+        return 0;
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
+    }
+
+    @Override
+    public void delete(Pais entity) {
+
+    }
+
+    @Override
+    public void deleteAllById(Iterable<? extends Long> longs) {
+
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Pais> entities) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
+    }
+
 
     @Override
     public void flush() {
@@ -30,12 +94,17 @@ public class PaisService implements PaisRepository {
     }
 
     @Override
-    public void deleteAllInBatch(Iterable entities) {
+    public <S extends Pais> List<S> saveAllAndFlush(Iterable<S> entities) {
+        return List.of();
+    }
+
+    @Override
+    public void deleteAllInBatch(Iterable<Pais> entities) {
 
     }
 
     @Override
-    public void deleteAllByIdInBatch(Iterable iterable) {
+    public void deleteAllByIdInBatch(Iterable<Long> longs) {
 
     }
 
@@ -59,119 +128,48 @@ public class PaisService implements PaisRepository {
         return null;
     }
 
-
-
     @Override
-    public List findAll(Example example, Sort sort) {
-        return List.of();
-    }
-
-    @Override
-    public List findAll(Example example) {
-        return paisRepository.findAll();
-    }
-
-    @Override
-    public List saveAllAndFlush(Iterable entities) {
-        return List.of();
-    }
-
-
-    @Override
-    public List saveAll(Iterable entities) {
-        return List.of();
-    }
-
-
-
-    @Override
-    public <S extends Pais> S save(S entity) {
-        return null;
-    }
-
-    @Override
-    public Optional<Pais> findById(Long aLong) {
+    public <S extends Pais> Optional<S> findOne(Example<S> example) {
         return Optional.empty();
     }
 
     @Override
-    public boolean existsById(Long aLong) {
-        return false;
-    }
-
-    @Override
-    public List findAll() {
+    public <S extends Pais> List<S> findAll(Example<S> example) {
         return List.of();
     }
 
     @Override
-    public List findAllById(Iterable iterable) {
+    public <S extends Pais> List<S> findAll(Example<S> example, Sort sort) {
         return List.of();
     }
 
     @Override
-    public long count() {
-        return 0;
-    }
-
-    @Override
-    public void deleteById(Long aLong) {
-
-    }
-
-    @Override
-    public void delete(Pais entity) {
-
-    }
-
-
-    @Override
-    public void deleteAllById(Iterable iterable) {
-
-    }
-
-    @Override
-    public void deleteAll(Iterable entities) {
-
-    }
-
-    @Override
-    public void deleteAll() {
-
-    }
-
-    @Override
-    public List findAll(Sort sort) {
-        return List.of();
-    }
-
-    @Override
-    public Page findAll(Pageable pageable) {
+    public <S extends Pais> Page<S> findAll(Example<S> example, Pageable pageable) {
         return null;
     }
 
     @Override
-    public Optional findOne(Example example) {
-        return Optional.empty();
-    }
-
-    @Override
-    public Page findAll(Example example, Pageable pageable) {
-        return null;
-    }
-
-    @Override
-    public long count(Example example) {
+    public <S extends Pais> long count(Example<S> example) {
         return 0;
     }
 
     @Override
-    public boolean exists(Example example) {
+    public <S extends Pais> boolean exists(Example<S> example) {
         return false;
     }
 
     @Override
-    public Object findBy(Example example, Function queryFunction) {
+    public <S extends Pais, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
+        return null;
+    }
+
+    @Override
+    public List<Pais> findAll(Sort sort) {
+        return paisRepository.findAll(sort);
+    }
+
+    @Override
+    public Page<Pais> findAll(Pageable pageable) {
         return null;
     }
 }

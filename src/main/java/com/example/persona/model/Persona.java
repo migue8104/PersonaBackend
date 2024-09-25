@@ -10,7 +10,7 @@ public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
     private String nombre;
     private String apellido;
     private int edad;

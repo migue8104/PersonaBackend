@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Estado implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
     private String nombre;
 
     @ManyToOne
@@ -28,7 +28,7 @@ public class Estado implements Serializable {
 
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

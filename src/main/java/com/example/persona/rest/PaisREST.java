@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/pais")
+@RequestMapping("/pais/")
 public class PaisREST {
 
     @Autowired

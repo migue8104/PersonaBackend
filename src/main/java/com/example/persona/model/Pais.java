@@ -11,7 +11,7 @@ public class Pais implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
     @Column(name = "nombre")
     private String nombre;
 
@@ -24,7 +24,7 @@ public class Pais implements Serializable {
 
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
